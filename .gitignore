@@ -1,0 +1,13 @@
+# Do not commit credentials, runtime databases, caches, or local settings
+.env
+.env.*
+!.env.example
+*.db
+*.sqlite
+*.sqlite3
+*.log
+__pycache__/
+.venv/
+venv/
+.cache/
+.DS_Store
