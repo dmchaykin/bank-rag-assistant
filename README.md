@@ -29,6 +29,9 @@ flowchart TD
     T -->|System message| L
     L --> O[Chat Output]
 ```
+### Langflow workflow
+
+![RAG workflow in Langflow](screenshots/rag_architecture.png)
 
 The underlying knowledge base was created with **OpenAI `text-embedding-3-small`**, `chunk_size = 500 characters`, `chunk_overlap = 75 characters`, using the newline separator. This produced **6 chunks** from the synthetic document. The Knowledge component retrieves up to **3** passages for each query. The Parser formats their `content` and `file_name` fields into the `{context}` variable for the system prompt.
 
@@ -40,7 +43,7 @@ The input goes both to the retrieval step and the model. A model response is gen
 - `flows/prompt_b.json` — updated Langflow Flow export
 - `data/fictional_bank_rules_rag.txt` — synthetic Russian bank policy (no confidential information)
 - `evaluation/ab_test_results.xlsx` — question set, model answers, hand scores and summary
-- `screenshots/flow_in_progress.png` — illustrative workflow screenshot taken during assembly; some components may be outside the screenshot frame
+- `screenshots/rag_architecture.png` — illustrative workflow screenshot taken during assembly; some components may be outside the screenshot frame
 
 ## How to reproduce locally
 
